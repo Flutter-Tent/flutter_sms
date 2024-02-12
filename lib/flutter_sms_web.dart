@@ -10,19 +10,16 @@ class FlutterSmsPlugin extends FlutterSmsPlatform {
     // WidgetsFlutterBinding.ensureInitialized();
     FlutterSmsPlatform.instance = FlutterSmsPlugin();
   }
-
-  @override
-  Future<String> sendSMS({
-    required String message,
-    required List<String> recipients,
-    bool sendDirect = false,
-  }) async {
-    bool _messageSent =
-        await FlutterSmsPlatform.instance.launchSmsMulti(recipients, message);
-    if (_messageSent) return 'Message Sent!';
-    return 'Error Sending Message!';
-  }
-
-  @override
-  Future<bool> canSendSMS() => Future.value(true);
+  //
+  // @override
+  // Future<String> sendSMS({
+  //   required String message,
+  //   required List<String> recipients,
+  //   bool sendDirect = false,
+  // }) async {
+  //   bool _messageSent =
+  //       await FlutterSmsPlatform.instance.launchSmsMulti(recipients, message);
+  //   if (_messageSent) return 'Message Sent!';
+  //   return 'Error Sending Message!';
+  // }
 }

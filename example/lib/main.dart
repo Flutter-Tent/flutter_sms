@@ -41,12 +41,12 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-  Future<bool> _canSendSMS() async {
-    bool _result = await canSendSMS();
-    setState(() => _canSendSMSMessage =
-        _result ? 'This unit can send SMS' : 'This unit cannot send SMS');
-    return _result;
-  }
+  // Future<bool> _canSendSMS() async {
+  //   bool _result = await canSendSMS();
+  //   setState(() => _canSendSMSMessage =
+  //       _result ? 'This unit can send SMS' : 'This unit cannot send SMS');
+  //   return _result;
+  // }
 
   Widget _phoneTile(String name) {
     return Padding(
@@ -144,7 +144,7 @@ class _MyAppState extends State<MyApp> {
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 icon: const Icon(Icons.check),
                 onPressed: () {
-                  _canSendSMS();
+                  // _canSendSMS();
                 },
               ),
             ),

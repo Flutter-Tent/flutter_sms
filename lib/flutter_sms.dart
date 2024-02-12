@@ -13,20 +13,20 @@ Future<String> sendSMS({
       recipients: recipients,
       sendDirect: sendDirect,
     );
-
-/// Launch SMS Url Scheme on all platforms
-Future<bool> launchSms({
-  String? message,
-  String? number,
-}) =>
-    FlutterSmsPlatform.instance.launchSms(number, message);
-
-/// Launch SMS Url Scheme on all platforms
-Future<bool> launchSmsMulti({
-  required String message,
-  required List<String> numbers,
-}) =>
-    FlutterSmsPlatform.instance.launchSmsMulti(numbers, message);
-
-/// Check if you can send SMS on this platform
-Future<bool> canSendSMS() => FlutterSmsPlatform.instance.canSendSMS();
+//
+// /// Launch SMS Url Scheme on all platforms
+// Future<bool> launchSms({
+//   String? message,
+//   String? number,
+// }) =>
+//     FlutterSmsPlatform.instance.launchSms(number, message);
+//
+// /// Launch SMS Url Scheme on all platforms
+// Future<bool> launchSmsMulti({
+//   required String message,
+//   required List<String> numbers,
+// }) =>
+//     FlutterSmsPlatform.instance.launchSmsMulti(numbers, message);
+//
+// /// Check if you can send SMS on this platform
+// Future<bool> canSendSMS() => FlutterSmsPlatform.instance.canSendSMS();

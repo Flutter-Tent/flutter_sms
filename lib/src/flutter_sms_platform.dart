@@ -56,33 +56,31 @@ class FlutterSmsPlatform extends PlatformInterface {
     }
   }
 
-  Future<bool> canSendSMS() {
-    return _channel
-        .invokeMethod<bool>('canSendSMS')
-        .then((value) => value ?? false);
+  Future<bool> canSendSMS() async{
+    return false;
   }
 
-  Future<bool> launchSmsMulti(List<String> numbers, [String? body]) {
-    if (numbers.length == 1) {
-      return launchSms(numbers.first, body);
-    }
-    String _phones = numbers.join(';');
-    if (body != null) {
-      final _body = Uri.encodeComponent(body);
-      return launch('sms:/open?addresses=$_phones${separator}body=$_body');
-    }
-    return launch('sms:/open?addresses=$_phones');
-  }
-
-  Future<bool> launchSms(String? number, [String? body]) {
-    // ignore: parameter_assignments
-    number ??= '';
-    if (body != null) {
-      final _body = Uri.encodeComponent(body);
-      return launch('sms:/$number${separator}body=$_body');
-    }
-    return launch('sms:/$number');
-  }
-
-  String get separator => isCupertino() ? '&' : '?';
+  // Future<bool> launchSmsMulti(List<String> numbers, [String? body]) {
+  //   if (numbers.length == 1) {
+  //     return launchSms(numbers.first, body);
+  //   }
+  //   String _phones = numbers.join(';');
+  //   if (body != null) {
+  //     final _body = Uri.encodeComponent(body);
+  //     return launch('sms:/open?addresses=$_phones${separator}body=$_body');
+  //   }
+  //   return launch('sms:/open?addresses=$_phones');
+  // }
+  //
+  // Future<bool> launchSms(String? number, [String? body]) {
+  //   // ignore: parameter_assignments
+  //   number ??= '';
+  //   if (body != null) {
+  //     final _body = Uri.encodeComponent(body);
+  //     return launch('sms:/$number${separator}body=$_body');
+  //   }
+  //   return launch('sms:/$number');
+  // }
+  //
+  // String get separator => isCupertino() ? '&' : '?';
 }
